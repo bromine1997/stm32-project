@@ -60,8 +60,8 @@ all: main-build
 main-build: stm32_basic_practice.elf secondary-outputs
 
 # Tool invocations
-stm32_basic_practice.elf stm32_basic_practice.map: $(OBJS) $(USER_OBJS) C:\Users\bromine\Desktop\Git\ Projects\stm32-project\New\ Folder\stm32_basic_practice\STM32F411RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "stm32_basic_practice.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\bromine\Desktop\Git Projects\stm32-project\New Folder\stm32_basic_practice\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32_basic_practice.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+stm32_basic_practice.elf stm32_basic_practice.map: $(OBJS) $(USER_OBJS) C:\Users\bromine\Desktop\Git\ Projects\stm32-project\practice\stm32_basic_practice\STM32F411RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "stm32_basic_practice.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\bromine\Desktop\Git Projects\stm32-project\practice\stm32_basic_practice\STM32F411RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="stm32_basic_practice.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
